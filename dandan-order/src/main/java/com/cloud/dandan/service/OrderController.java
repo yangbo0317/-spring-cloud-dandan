@@ -1,8 +1,10 @@
 package com.cloud.dandan.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -12,6 +14,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
+@RefreshScope
 public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
@@ -19,6 +22,8 @@ public class OrderController {
     private DiscoveryClient discoveryClient;
     @Autowired
     private LoadBalancer loadBalancer;
+    @Value("${need.login}")
+    private Boolean needLogin;
     @RequestMapping("getUserServiceList")
     public String getUserServiceList(HttpServletRequest request){
         String remoteHost = getRemoteHost(request);
@@ -34,6 +39,11 @@ public class OrderController {
         String restTemplateForObject = restTemplate.getForObject(uri + "/getUser", String.class);
         System.out.println(restTemplateForObject);
         return uri.getHost()+uri.getPort();
+    }
+    @RequestMapping("testConfig")
+    public String testConfig(){
+//        return "";
+        return needLogin+"";
     }
     /**
      * 获取目标主机的ip

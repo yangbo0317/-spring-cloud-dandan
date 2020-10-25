@@ -45,7 +45,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.cloud.dandan.App</mainClass>
+                    <mainClass>com.cloud.dandan.UserApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
