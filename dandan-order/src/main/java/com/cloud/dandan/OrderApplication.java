@@ -2,6 +2,7 @@ package com.cloud.dandan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -9,8 +10,9 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan({"com.cloud.dandan.service","com.cloud.dandan.config"})
-public class OrderApplication {
+public class OrderApplication  {
     public static void main(String[] args) {
         SpringApplication.run(OrderApplication.class);
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
     }
 }

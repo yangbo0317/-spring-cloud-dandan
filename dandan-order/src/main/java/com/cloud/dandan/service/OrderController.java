@@ -24,6 +24,8 @@ public class OrderController {
     private LoadBalancer loadBalancer;
     @Value("${need.login}")
     private Boolean needLogin;
+    @Value("${order.pwd}")
+    private String orderPwd;
     @RequestMapping("getUserServiceList")
     public String getUserServiceList(HttpServletRequest request){
         String remoteHost = getRemoteHost(request);
@@ -43,7 +45,7 @@ public class OrderController {
     @RequestMapping("testConfig")
     public String testConfig(){
 //        return "";
-        return needLogin+"";
+        return orderPwd+"";
     }
     /**
      * 获取目标主机的ip

@@ -10,6 +10,7 @@
   <modules>
     <module>dandan-user</module>
     <module>dandan-order</module>
+    <module>dandan-product</module>
   </modules>
   <name>spring-cloud-dandan</name>
   <properties>

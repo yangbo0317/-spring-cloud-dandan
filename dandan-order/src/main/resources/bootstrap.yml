@@ -3,7 +3,7 @@ spring:
     ###服务的名称
     name: dandan-order
   profiles:
-    active: dev
+    active: pre
   cloud:
     nacos:
       discovery:
