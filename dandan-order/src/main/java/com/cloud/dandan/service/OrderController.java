@@ -1,7 +1,6 @@
 package com.cloud.dandan.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -15,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RefreshScope
+@RequestMapping("/order")
 public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
@@ -22,10 +22,10 @@ public class OrderController {
     private DiscoveryClient discoveryClient;
     @Autowired
     private LoadBalancer loadBalancer;
-    @Value("${need.login}")
-    private Boolean needLogin;
-    @Value("${order.pwd}")
-    private String orderPwd;
+//    @Value("${need.login}")
+//    private Boolean needLogin;
+//    @Value("${order.pwd}")
+//    private String orderPwd;
     @RequestMapping("getUserServiceList")
     public String getUserServiceList(HttpServletRequest request){
         String remoteHost = getRemoteHost(request);
@@ -45,7 +45,7 @@ public class OrderController {
     @RequestMapping("testConfig")
     public String testConfig(){
 //        return "";
-        return orderPwd+"";
+        return "ok";
     }
     /**
      * 获取目标主机的ip

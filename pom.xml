@@ -11,6 +11,7 @@
     <module>dandan-user</module>
     <module>dandan-order</module>
     <module>dandan-product</module>
+    <module>dandan-gateway</module>
   </modules>
   <name>spring-cloud-dandan</name>
   <properties>

@@ -1,0 +1,8 @@
+server:
+  port: 7001
+nacos:
+  gateway:
+    route:
+      config:
+        data-id: gateway-router
+        group: DEFAULT_GROUP
