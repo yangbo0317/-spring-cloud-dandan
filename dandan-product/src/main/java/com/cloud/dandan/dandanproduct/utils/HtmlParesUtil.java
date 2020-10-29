@@ -1,4 +1,4 @@
-package com.cloud.dandan.dandanproduct;
+package com.cloud.dandan.dandanproduct.utils;
 
 import com.cloud.dandan.dandanproduct.service.GoodsInfo;
 import org.jsoup.Jsoup;

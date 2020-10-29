@@ -1,4 +1,4 @@
-package com.cloud.dandan.dandanproduct;
+package com.cloud.dandan.dandanproduct.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

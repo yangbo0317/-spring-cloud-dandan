@@ -1,6 +1,6 @@
 package com.cloud.dandan.dandanproduct.service;
 
-import com.cloud.dandan.dandanproduct.HtmlParesUtil;
+import com.cloud.dandan.dandanproduct.utils.HtmlParesUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -21,13 +21,18 @@ spring:
         #默认为false，
         #设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
         locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId/**，其中微服务应用名默认大写访问。
-          enabled: false
-      enabled: true #如果包含启动程序，但出于某些原因，不希望启用网关，则设置spring.cloud.gateway.enabled=false
-      routes:
-        - id: neo_route
-          uri: http://www.ityouknow.com
-          predicates:
-            - Path=/spring-cloud
+          enabled: true
+          lower-case-service-id: true
+#      enabled: true #如果包含启动程序，但出于某些原因，不希望启用网关，则设置spring.cloud.gateway.enabled=false
+#      routes:
+#        - id: dandan-order
+#          uri: lb://dandan-order #此配置的值注册到Nacos中服务提供者的spring.application.name的值
+#          predicates:
+#            - Path=/**   #将所有的请求都进行转发
+#        - id: dandan-user
+#          uri: lb://dandan-user #此配置的值注册到Nacos中服务提供者的spring.application.name的值
+#          predicates:
+#            - Path=/**   #将所有的请求都进行转发
 management:
   endpoints:
     web:
