@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        ###服务注册地址
+        server-addr: 127.0.0.1:8848
+        enabled: true
+        namespace: 7037fdd4-617b-4715-962e-b400c7fd0791
+  application:
+    name: dandan-product
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/vote_center?useSSL=false&connectTimeout=3000&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8
+    username: root
+    password:
+    driver-class-name:
+server:
+  port: 6001
