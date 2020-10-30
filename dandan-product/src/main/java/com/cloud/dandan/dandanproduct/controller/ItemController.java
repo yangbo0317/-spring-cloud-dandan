@@ -14,7 +14,7 @@ public class ItemController {
     private ParseDataService parseDataService;
     @RequestMapping("getAllItem")
     public List<GoodsInfo> getAllItem(String keyWords){
-        List<GoodsInfo> jdGoods = parseDataService.getJdGoods(keyWords);
+        List<GoodsInfo> jdGoods = parseDataService.getJdGoods(keyWords,1);
         return jdGoods;
     }
 }

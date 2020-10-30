@@ -10,8 +10,8 @@ public class ParseServiceImpl implements ParseDataService {
     @Autowired
     private HtmlParesUtil htmlParesUtil;
     @Override
-    public List<GoodsInfo> getJdGoods(String keyWords) {
-        List<GoodsInfo> goodsInfoList = htmlParesUtil.parseJdData(keyWords);
+    public List<GoodsInfo> getJdGoods(String keyWords,Integer page) {
+        List<GoodsInfo> goodsInfoList = htmlParesUtil.parseJdData(keyWords,page);
         return goodsInfoList;
     }
 }

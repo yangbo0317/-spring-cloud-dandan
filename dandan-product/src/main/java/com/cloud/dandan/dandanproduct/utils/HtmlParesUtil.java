@@ -31,22 +31,26 @@ public class HtmlParesUtil {
 //            e.printStackTrace();
 //        }
 //    }
-    public List<GoodsInfo> parseJdData(String keysWords){
+    public List<GoodsInfo> parseJdData(String keysWords,Integer page){
         List<GoodsInfo> goodsInfoList = new ArrayList();
-        String url = "https://search.jd.com/Search?keyword="+keysWords;
+        String url = "https://search.jd.com/Search?keyword="+keysWords+"&page="+page;
         try {
             Document document = Jsoup.parse(new URL(url),30000);
             Element j_goodsList = document.getElementById("J_goodsList");
             Elements elements = j_goodsList.getElementsByTag("li");
             for (Element el:elements){
                 GoodsInfo goodsInfo = new GoodsInfo();
-                String img = el.getElementsByTag("img").eq(0).attr("data-lazy-img").substring(2);
-                String price = el.getElementsByClass("p-price").eq(0).text();
-                String name = el.getElementsByClass("p-name").eq(0).text();
-                goodsInfo.setGoodsName(name);
-                goodsInfo.setPrice(price);
-                goodsInfo.setImg(img);
-                goodsInfoList.add(goodsInfo);
+                try {
+                    String img = el.getElementsByTag("img").eq(0).attr("data-lazy-img").substring(2);
+                    String price = el.getElementsByClass("p-price").eq(0).text();
+                    String name = el.getElementsByClass("p-name").eq(0).text();
+                    goodsInfo.setGoodsName(name);
+                    goodsInfo.setPrice(price);
+                    goodsInfo.setImg(img);
+                    goodsInfoList.add(goodsInfo);
+                }catch (Exception e){
+
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

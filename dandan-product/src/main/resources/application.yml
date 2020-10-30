@@ -9,9 +9,9 @@ spring:
   application:
     name: dandan-product
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/vote_center?useSSL=false&connectTimeout=3000&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8
+    url: jdbc:mysql://127.0.0.1:3306/dandan-product?useSSL=false&connectTimeout=3000&zeroDateTimeBehavior=CONVERT_TO_NULL&allowPublicKeyRetrieval=true&serverTimezone=GMT%2b8
     username: root
-    password:
-    driver-class-name:
-server:
-  port: 6001
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
